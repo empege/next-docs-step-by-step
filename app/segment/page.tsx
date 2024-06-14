@@ -10,7 +10,7 @@ const Page = () => {
         <p>Svaki PAGE je SEGMENT u urlu. Svi segmenti zajedno su PATH</p>
         <p>PAGE je uvek LEAF route subtreeja</p>
         <p>
-          <Link className='button' href='#scrolltome' scroll={false}>
+          <Link className='button' href='#scrolltome'>
             {/* Ako stavis scroll={false} nece ni da ide na anchor, koja glupost, onda je to generalno, ne samo za back i forth kao sto su pricali */}
             {/* <Link className='active' href='/segment#scrolltome' scroll={false}> */}
             Scroll to bottom

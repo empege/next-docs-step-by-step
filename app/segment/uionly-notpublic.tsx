@@ -10,9 +10,9 @@ const Random = (props: any) => {
   // const host = headersList.get('host')
   // const url = headersList.get('next-url')
   // console.log(props, host, url)
-  const segment = usePathname()
+  // const segment = usePathname()
   const [domain, setDomain] = useState(null)
-  console.log(domain)
+  // console.log(domain)
 
   useEffect(() => {
     setDomain(window.location.href)
