@@ -7,7 +7,6 @@ import keyboardSound from '../../public/keyboard.wav'
 const ClientHelpers = () => {
 
   useEffect(() => {
-
     const click = new Audio(clickSound)
     const keyboard = new Audio(keyboardSound)
     click.volume = 0.5

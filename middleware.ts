@@ -82,4 +82,5 @@ export const config = {
   // matcher: '/about/:path*',
   matcher: ['/about/:path*', '/middleware-page', '/matched-redirect'],
   // Middleware se pokrece samo kad dodjes na neku od ovih stranica. Posto middleware-page ima u sebi svoj response, onda ostaje tu. Ostali nemaju/ne postoje, i onda ide u defaultnu response na / ili ti root stranicu ili ti home page (koji nije zapravo /home)
+  // redirect se ovde desava pre render procesa (u middleware ili u next.config.js), a u komponentama kad koristis tokom? Moze i u klijent komponentama da se koristi, ali ne u eventListenerima
 }

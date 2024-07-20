@@ -1,12 +1,12 @@
-'use client' // Error components must be Client Components
-import Link from 'next/link'
+"use client" // Error components must be Client Components
+import Link from "next/link"
 
-import React, { useEffect } from 'react'
+import React, { useEffect } from "react"
 
 const Error = ({ error, reset }) => {
   useEffect(() => {
     // Log the error to an error reporting service
-    console.error('Evo ga errooooooor: ', error)
+    console.error("Evo ga errooooooor: ", error)
   }, [error])
   return (
     <div className='wrapper'>

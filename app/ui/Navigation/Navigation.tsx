@@ -1,6 +1,6 @@
-import Button from '../Button/Button'
-import { FaArrowAltCircleRight } from 'react-icons/fa'
-import Logo from '../Logo/Logo'
+import Button from "../Button/Button"
+import { FaArrowAltCircleRight } from "react-icons/fa"
+import Logo from "../Logo/Logo"
 
 const Navigation = () => {
   return (
@@ -40,7 +40,11 @@ const Navigation = () => {
           </Button>
         </li>
         <li className='flex items-center mr-4 whitespace-nowrap'>
-          <Button className='flex items-center' href='/parallelroutes'>
+          <Button
+            className='flex items-center'
+            href='/parallelroutes'
+            target='_blanc'
+          >
             🏋️‍♀️ PARALLEL 🏋️‍♀️
           </Button>
         </li>
@@ -60,8 +64,13 @@ const Navigation = () => {
           </Button>
         </li>
         <li className='flex items-center mr-4 whitespace-nowrap'>
-          <Button className='flex items-center' href='/misc' target='_blanc'>
+          <Button className='flex items-center' href='/misc'>
             🍚 MISC 🉐
+          </Button>
+        </li>
+        <li className='flex items-center mr-4 whitespace-nowrap'>
+          <Button className='flex items-center' href='/catchall/asd/123'>
+            [ ...CATCHALL ]
           </Button>
         </li>
       </ul>

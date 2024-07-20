@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Dynamic = async ({ params }) => {
   // OVO BRISI SLOBODNO, CISTO DA SE VIDI LOADING
   await new Promise((resolve) => setTimeout(resolve, 1000))
