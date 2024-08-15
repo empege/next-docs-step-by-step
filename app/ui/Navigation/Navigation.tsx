@@ -73,6 +73,11 @@ const Navigation = () => {
             [ ...CATCHALL ]
           </Button>
         </li>
+        <li className='flex items-center mr-4 whitespace-nowrap'>
+          <Button className='flex items-center' href='/database'>
+            🛰️ DATABASE 🛰️
+          </Button>
+        </li>
       </ul>
     </div>
   )

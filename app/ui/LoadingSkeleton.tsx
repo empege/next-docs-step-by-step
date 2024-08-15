@@ -1,5 +1,4 @@
-import React from 'react'
-import { ImSpinner3 } from 'react-icons/im'
+import { ImSpinner3 } from "react-icons/im"
 
 const LoadingSkeleton = () => {
   return (
