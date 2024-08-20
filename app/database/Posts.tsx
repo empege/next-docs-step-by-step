@@ -1,33 +1,31 @@
 import Image from "next/image"
-import React from "react"
+import DeleteBtn from "./DeleteBtn"
 
 const Posts = ({ posts }) => {
   return (
-    <div>
-      <h2 className='my-10'>Posts:</h2>
-      <section className='flex flex-wrap'>
-        {posts.map((post: any, id: number) => (
-          <article
-            key={id}
-            className='bg-black mb-10 w-full flex even:flex-row-reverse rounded-lg'
-          >
-            <div className='relative w-1/2'>
-              <Image
-                src={post.image}
-                alt={post.creator}
-                width={0}
-                height={0}
-                className='w-auto h-[300px] object-cover rounded-lg'
-              />
-              <h3 className='absolute bottom-0 px-2 py-1 bg-[#404040] text-[0.9rem]'>
-                By: {post.creator}
-              </h3>
-            </div>
-            <p className='w-1/2 p-5'>{post.post_text}</p>
-          </article>
-        ))}
-      </section>
-    </div>
+    <section className='flex flex-wrap'>
+      {posts.map((post: any, id: number) => (
+        <article
+          key={id}
+          className='post-article m-[5px] bg-black mb-10 w-full flex flex-col rounded-lg'
+        >
+          <div className='relative'>
+            <Image
+              src={post.image}
+              alt={post.creator}
+              width={600}
+              height={450}
+              className='w-full object-cover rounded-t-lg'
+            />
+            <h3 className='group absolute top-0 right-0 px-2 py-1 bg-[#404040] text-[0.9rem] cursor-pointer'>
+              By: {post.creator}
+              <DeleteBtn id={post.id} />
+            </h3>
+          </div>
+          <p className='p-5 border-t-[1px] border-white'>{post.post_text}</p>
+        </article>
+      ))}
+    </section>
   )
 }
 

@@ -1,11 +1,18 @@
 import { getPosts } from "@/lib-tutorial-folder/posts"
-import Posts from "./Posts"
+import PostsSection from "./Posts"
+import { Suspense } from "react"
+import LoadingSkeleton from "../ui/LoadingSkeleton"
+import Form from "./Form"
+import LayoutBtn from "./LayoutBtn"
 
-const DatabasePage = async () => {
+const Posts = async () => {
   const posts = await getPosts()
+  return <PostsSection posts={posts} />
+}
 
+const DatabasePage = () => {
   return (
-    <div className='wrapper'>
+    <div className='px-20 max-w-[1200px] mx-auto mt-20'>
       <h1>Database stranica</h1>
       <p>
         Na ovoj stranici koristim sqlite3 paket instaliran sa npm install
@@ -13,41 +20,18 @@ const DatabasePage = async () => {
         time, iako nije deo dokumentacije koju citam uz ovo, ovde gledam udemy
         kurs
       </p>
-      <div className='text-left w-full mt-20'>
-        <h2 className='mb-5'>Dodaj post</h2>
-        <form action=''>
-          <label className='block mb-5' htmlFor='creatorName'>
-            Vase ime:
-            <br />
-            <input
-              type='text'
-              name='creatorName'
-              id='creatorName'
-              className='rounded-lg text-black px-2 py-1 w-[300px]'
-            />
-          </label>
-          <label className='block mb-5' htmlFor='postText'>
-            Tekst posta:
-            <br />
-            <textarea
-              rows={6}
-              name='postText'
-              id='postText'
-              className='rounded-lg text-black px-2 py-1 w-[300px] resize-none'
-            ></textarea>
-          </label>
-          <label className='block mb-5' htmlFor='imageFile'>
-            Uploaduj sliku:
-            <br />
-            <input
-              type='file'
-              name='imageFile'
-              id='imageFile'
-              className='rounded-lg text-black px-2 py-1 w-[300px]'
-            />
-          </label>
-        </form>
-        <Posts posts={posts} />
+      <div className='text-left w-full mt-20 flex gap-10'>
+        <div className='w-5/12'>
+          <h2 className='mb-5'>Dodaj post</h2>
+          <Form />
+        </div>
+        <div className='w-7/12 relative'>
+          <h2>Posts:</h2>
+          <LayoutBtn />
+          <Suspense fallback={<LoadingSkeleton text='Loading Posts...' />}>
+            <Posts />
+          </Suspense>
+        </div>
       </div>
     </div>
   )

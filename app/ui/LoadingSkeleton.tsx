@@ -1,9 +1,13 @@
 import { ImSpinner3 } from "react-icons/im"
 
-const LoadingSkeleton = () => {
+interface LoaderTest {
+  text?: string
+}
+
+const LoadingSkeleton = ({ text }: LoaderTest) => {
   return (
     <div className='wrapper'>
-      <h1>Loading...</h1>
+      <h1>{text || "Loading..."}</h1>
       <ImSpinner3 className='text-4xl animate-spin-slow' />
     </div>
   )
